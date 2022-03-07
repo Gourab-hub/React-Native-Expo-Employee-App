@@ -24,9 +24,7 @@ const CreateEmployy = () => {
                 value={Name}
                 mode="outlined"
                 // placeholder='Enter Your Name'
-
                 onChangeText={e => setName(e)}
-
                 selectionColor='#a89fd4'
                 outlineColor="#1a298a"
                 activeOutlineColor='#150c3d'
