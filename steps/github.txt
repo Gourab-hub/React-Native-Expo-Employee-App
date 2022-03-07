@@ -9,6 +9,14 @@ git push -u origin main
 
 
 …or push an existing repository from the command line
+
+git add .
+git remote add origin https://github.com/Gourab-hub/React-Native-Expo-Employee-App.git
+git commit -m "Create Home Page"
+git push -u origin main
+
+
+
 git remote add origin https://github.com/Gourab-hub/React-Native-Expo-Employee-App.git
 git branch -M main
 git push -u origin main
