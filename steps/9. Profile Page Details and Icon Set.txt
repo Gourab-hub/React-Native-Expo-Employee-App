@@ -1,3 +1,14 @@
+1.
+search react native expo icons
+
+https://icons.expo.fyi/
+
+
+2.
+
+Desktop\react native expo\employeeapp\screens\Profile.js
+
+
 import react from 'react';
 import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -60,7 +71,7 @@ const Profile = () => {
 
             <View style={style.modelButtonView}>
                 <Button style={style.button} icon="account-edit" mode="contained" onPress={() => console.log("pressed")}>
-                    Account-edit
+                Account-edit
                 </Button>
 
                 <Button style={style.button} icon="delete-outline" mode="contained" onPress={() => console.log("pressed")}>
