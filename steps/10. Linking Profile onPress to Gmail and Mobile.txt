@@ -1,3 +1,6 @@
+1.
+
+
 import react from 'react';
 import { StyleSheet, Text, View, Image, FlatList, Linking, Platform, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
