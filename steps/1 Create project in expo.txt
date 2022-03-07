@@ -1,0 +1,11 @@
+1.
+
+cmd->expo init employeeapp
+
+
+cd employeeapp
+
+
+npm start
+
+
