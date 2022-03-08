@@ -6,9 +6,11 @@ import { MaterialIcons, AntDesign } from '@expo/vector-icons';
 import { TextInput, Button } from 'react-native-paper';
 
 
-const Profile = () => {
+const Profile = (props) => {
+  
+    console.log(props)
 
-
+   const {id,name,email,phone,pic,salary,position} =props.route.params.item
     const openDial = () => {
         if (Platform.OS === "android") {
             Linking.openURL("tel:8167709533")
@@ -31,7 +33,7 @@ const Profile = () => {
             <View style={style.ProfileVew}>
                 <Image
                     style={style.Profileimage}
-                    source={{ uri: "https://media.istockphoto.com/photos/happy-student-girl-at-high-school-picture-id1278976856?b=1&k=20&m=1278976856&s=170667a&w=0&h=XmwcmWnFqSRvzrUWdhGY7cAX9Ip9JFDPzeKIm0T4VFo=" }}
+                    source={{ uri: pic}}
                 />
             </View>
 
@@ -39,8 +41,8 @@ const Profile = () => {
 
 
             <View style={style.ProfileVewDetails}>
-                <Title>Title</Title>
-                <Text style={{ fontSize: 15 }}>Web Developer</Text>
+                <Title>{name}</Title>
+                <Text style={{ fontSize: 15 }}>{position}</Text>
             </View>
 
             <Card style={style.Details}
@@ -48,7 +50,7 @@ const Profile = () => {
                 onPress={() => Linking.openURL('mailto:gb@gmail.com')}>
                 <View style={style.DetailsView}>
                     <MaterialIcons style={style.icon} name="email" />
-                    <Text style={{ marginLeft: 25 }}>gb@gmail.com</Text>
+                    <Text style={{ marginLeft: 25 }}>{email}</Text>
                 </View>
             </Card >
 
@@ -57,7 +59,7 @@ const Profile = () => {
             >
                 <View style={style.DetailsView}>
                     <AntDesign style={style.icon} name="phone" />
-                    <Text style={{ marginLeft: 25 }}>8167709533</Text>
+                    <Text style={{ marginLeft: 25 }}>{phone}</Text>
                 </View>
             </Card >
 
@@ -66,7 +68,7 @@ const Profile = () => {
                 <View style={style.DetailsView}>
                     <MaterialIcons style={style.icon} name="attach-money" />
 
-                    <Text style={{ marginLeft: 25 }}>350000</Text>
+                    <Text style={{ marginLeft: 25 }}>{salary}</Text>
                 </View>
             </Card>
 

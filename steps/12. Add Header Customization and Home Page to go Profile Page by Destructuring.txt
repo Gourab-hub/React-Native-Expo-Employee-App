@@ -1,0 +1,188 @@
+1.App.js
+
+
+
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import Constants from "expo-constants"
+import Home from './screens/Home';
+import CreateEmployy from './screens/CreateEmployee';
+import Profile from './screens/Profile';
+
+// Navigate 
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+
+const Stack = createStackNavigator();
+
+const myoptions={
+  title: 'Create Employee',
+  animationEnabled: "true",
+  headerTintColor: "#fff",
+  headerStyle: {
+    height: 80, // Specify the height of your custom header
+    backgroundColor: '#1a298a',
+  }
+}
+
+function App() {
+  return (
+    <View style={styles.container}>
+      {/* <Home /> */}
+      {/* <CreateEmployy/> */}
+      {/* <Profile /> */}
+
+      
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} options={{...myoptions,title:"Home"}}/>  // React spread operator to change Title name
+        <Stack.Screen name="Create" component={CreateEmployy}options={myoptions}/>
+        <Stack.Screen name="Profile" component={Profile} options={{...myoptions,title:"Profile"}}/>
+      </Stack.Navigator>
+
+    </View>
+  );
+}
+
+
+
+//https://reactnavigation.org/docs/getting-started
+export default () => {
+  return (
+    <NavigationContainer>
+      <App />
+    </NavigationContainer>
+  )
+}
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#eee',
+    // marginTop: Constants.statusBarHeight,
+
+  },
+});
+
+
+
+2.Home.js
+
+
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
+import { Avatar, Button, Card, Title, Paragraph, FAB } from 'react-native-paper';
+
+
+const Home = ({navigation}) => {
+
+    const DATA = [
+        { id: 1, name: "Anju", position: "Web Developer", pic: "https://images.unsplash.com/photo-1489939078242-0a1dc4a08f06?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGxhZHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" },
+        { id: 2, name: "Gourab", position: "Android Developer", pic: "https://images.unsplash.com/photo-1524386189627-88c26ac1cc69?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGxhZHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" },
+        { id: 3, name: "Tania", position: "Api Developer", pic: "https://images.unsplash.com/photo-1542330952-bffc55e812b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGxhZHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" },
+
+
+    ]
+
+    // const renderList = data.map((item) => {
+    //     return (
+    //         <Card style={style.mycard} key={item.id}>
+    //             <View style={style.cardview}>
+    //                 <Image
+    //                     style={{ width: 60, height: 60, borderRadius: 60 / 2 }}
+    //                     source={{ uri: `${item.pic}` }}
+
+    //                 />
+    //                 <View style={{ marginLeft: 10 }}>
+    //                     <Text style={style.text}>{item.name}</Text>
+    //                     <Text >{item.position}</Text>
+    //                 </View>
+    //             </View>
+    //         </Card>
+    //     )
+
+    // })
+
+    const renderList = ((item) => {
+        return (
+
+***************
+            <Card style={style.mycard} key={item.id} onPress={()=>navigation.navigate("Profile")}>  // Here only see the static profile
+***************
+                <View style={style.cardview}>
+                    <Image
+                        style={{ width: 60, height: 60, borderRadius: 60 / 2 }}
+                        source={{ uri: `${item.pic}` }}
+
+                    />
+                    <View style={{ marginLeft: 10 }}>
+                        <Text style={style.text}>{item.name}</Text>
+                        <Text >{item.position}</Text>
+                    </View>
+                </View>
+            </Card>
+        )
+
+    })
+
+    return (
+        <View style={style.fullscreen}>
+            <FlatList
+                data={DATA}
+                renderItem={({ item }) => {
+                    console.log(item)
+                    return renderList(item)
+
+                }}
+            // keyExtractor={item => item.id}
+
+            />
+
+
+            {/* {renderList} */}
+            <FAB onPress={()=>navigation.navigate("Create")}
+                style={style.fab}
+                small={false}
+                icon="plus"
+                // theme={{ colors: { colo: 'Open Sans' } }}
+                // onPress={() => console.log('Pressed')}
+            />
+
+        </View>
+
+
+
+
+    )
+}
+
+const style = StyleSheet.create({
+    fullscreen: {
+        flex: 1,
+    },
+    mycard: {
+        margin: 5,
+
+        backgroundColor: '#fff',
+    },
+    cardview: {
+        flexDirection: 'row',
+        margin: 15,
+    },
+    text: {
+        fontSize: 20,
+        margin: 2,
+
+    },
+    fab: {
+        position: 'absolute',
+        margin: 16,
+        right: 0,
+        bottom: 0,
+        tintColor: 'white',
+        backgroundColor: '#105494'
+    },
+})
+
+export default Home;
