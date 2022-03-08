@@ -1,3 +1,108 @@
+1.Install React Navigation
+
+a)https://reactnavigation.org/docs/getting-started/
+
+npm install @react-navigation/native
+
+expo install react-native-screens react-native-safe-area-context
+
+b)Install Stack Navigator
+
+npm install @react-navigation/stack
+
+
+expo install react-native-gesture-handler
+
+
+2. Wrapp whole component in import { NavigationContainer } from '@react-navigation/native';
+
+
+
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+
+export default function App() {
+  return (
+    <NavigationContainer>{/* Rest of your app code */}</NavigationContainer>
+  );
+}
+
+
+
+
+3. App.js 
+
+C:\Users\Gourab\OneDrive\Desktop\react native expo\employeeapp\App.js
+
+
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import Constants from "expo-constants"
+import Home from './screens/Home';
+import CreateEmployy from './screens/CreateEmployee';
+import Profile from './screens/Profile';
+
+******************************
+// Navigate 
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+
+const Stack = createStackNavigator();
+
+
+
+function App() {
+  return (
+    <View style={styles.container}>
+      {/* <Home /> */}
+      {/* <CreateEmployy/> */}
+
+      {/* <Profile /> */}
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Create" component={CreateEmployy}
+           options={{
+            title: 'Create Employee',
+          }} />
+        <Stack.Screen name="Profile" component={Profile} />
+
+      </Stack.Navigator>
+
+    </View>
+  );
+}
+
+
+
+//https://reactnavigation.org/docs/getting-started
+export default () => {
+  return (
+    <NavigationContainer>
+      <App />
+    </NavigationContainer>
+  )
+}
+****************
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#eee',
+    // marginTop: Constants.statusBarHeight,
+
+  },
+});
+
+
+4.Home.js
+C:\Users\Gourab\OneDrive\Desktop\react native expo\employeeapp\screens\Home.js
+
+
+
+
+
+
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
 import { Avatar, Button, Card, Title, Paragraph, FAB } from 'react-native-paper';
@@ -64,7 +169,7 @@ const Home = (props) => {
 
             />
 
-
+******************
             {/* {renderList} */}
             <FAB onPress={()=>props.navigation.navigate("Create")}
                 style={style.fab}
@@ -76,7 +181,7 @@ const Home = (props) => {
 
         </View>
 
-
+***********************
 
 
     )
