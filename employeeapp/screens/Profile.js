@@ -6,9 +6,10 @@ import { MaterialIcons, AntDesign } from '@expo/vector-icons';
 import { TextInput, Button } from 'react-native-paper';
 
 
+
 const Profile = (props) => {
   
-    console.log(props)
+    // console.log(props)
 
    const {id,name,email,phone,pic,salary,position} =props.route.params.item
     const openDial = () => {
