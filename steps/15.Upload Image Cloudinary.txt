@@ -1,3 +1,11 @@
+1.
+
+
+
+CreateEmployee.js
+
+
+
 import react, { useState } from 'react';
 import { StyleSheet, Text, View, Image, FlatList, Modal } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
@@ -17,7 +25,7 @@ const CreateEmployy = () => {
     const [model, setModel] = useState(false)
     // const [image, setImage] = useState(null);
 
-
+******************************
 
     const pickImageFromGallery = async () => {
         // No permissions request is necessary for launching the image library
@@ -28,7 +36,7 @@ const CreateEmployy = () => {
             quality: 1,
         });
         // console.log(result);
-        if (!result.cancelled) {
+        if (!result.cancelled) {   V.V.V.V.I ***********
             let newfile = {
                 uri: result.uri,
                 type: `test/${result.uri.split(".")[1]}`,
@@ -49,7 +57,7 @@ const CreateEmployy = () => {
             quality: 1,
         });
         // console.log(result);
-        if (!result.cancelled) {
+        if (!result.cancelled) { V.V.V.V.I ***********
             let newfile = {
                 uri: result.uri,
                 type: `test/${result.uri.split(".")[1]}`,
@@ -90,7 +98,7 @@ const CreateEmployy = () => {
     }
 
 
-
+********************************************
 
     return (
         <View style={style.fullscreen}>

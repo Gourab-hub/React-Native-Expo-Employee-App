@@ -56,7 +56,7 @@ const Home = ({navigation}) => {
             <FlatList
                 data={DATA}
                 renderItem={({ item }) => {
-                    console.log(item)
+                    // console.log(item)
                     return renderList(item)
 
                 }}
