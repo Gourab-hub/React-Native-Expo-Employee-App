@@ -12,23 +12,31 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
-
+const myoptions={
+  title: 'Create Employee',
+  animationEnabled: "true",
+  headerTintColor: "#fff",
+  headerMode: 'screen',
+  headerStyle: {
+    height: 80, // Specify the height of your custom header
+    backgroundColor: '#1a298a',
+   
+  }
+}
 
 function App() {
   return (
     <View style={styles.container}>
       {/* <Home /> */}
       {/* <CreateEmployy/> */}
-
       {/* <Profile /> */}
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Create" component={CreateEmployy}
-           options={{
-            title: 'Create Employee',
-          }} />
-        <Stack.Screen name="Profile" component={Profile} />
 
+
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} options={{...myoptions,title:"Home"}}/>  
+        {/* React spread operator to change Title name */}
+        <Stack.Screen name="Create" component={CreateEmployy}options={myoptions}/>
+        <Stack.Screen name="Profile" component={Profile} options={{...myoptions,title:"Profile"}}/>
       </Stack.Navigator>
 
     </View>

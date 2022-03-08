@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
 import { Avatar, Button, Card, Title, Paragraph, FAB } from 'react-native-paper';
 
 
-const Home = (props) => {
+const Home = ({navigation}) => {
 
     const DATA = [
         { id: 1, name: "Anju", position: "Web Developer", pic: "https://images.unsplash.com/photo-1489939078242-0a1dc4a08f06?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGxhZHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" },
@@ -34,7 +34,7 @@ const Home = (props) => {
 
     const renderList = ((item) => {
         return (
-            <Card style={style.mycard} key={item.id}>
+            <Card style={style.mycard} key={item.id} onPress={()=>navigation.navigate("Profile")}>
                 <View style={style.cardview}>
                     <Image
                         style={{ width: 60, height: 60, borderRadius: 60 / 2 }}
@@ -66,7 +66,7 @@ const Home = (props) => {
 
 
             {/* {renderList} */}
-            <FAB onPress={()=>props.navigation.navigate("Create")}
+            <FAB onPress={()=>navigation.navigate("Create")}
                 style={style.fab}
                 small={false}
                 icon="plus"

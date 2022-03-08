@@ -68,7 +68,7 @@ const CreateEmployy = () => {
                 Upload Pic
             </Button>
             <Button style={style.button} icon="content-save" mode="contained" onPress={() => console.log("pressed")}>
-                Upload Pic
+                Save
             </Button>
 
             <Modal
