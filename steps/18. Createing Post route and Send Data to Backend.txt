@@ -1,3 +1,37 @@
+1.
+
+Postman
+a. post:  http://localhost:5000/send/
+b. header:  key                value
+            Content-Type       application/json
+c.Body
+
+   raw            json
+
+{
+    "name":"Gourab",
+    "email":"gourabbanik2021@gmail.com",
+    "phone":"8167709533",
+    "picture":"some url",
+    "salary":"500000",
+    "position":"web Dev" 
+}
+
+
+
+
+
+
+
+2.
+
+Desktop\react native expo\employeeapp\server\app.js
+
+
+
+app.js
+
+
 const express =require('express');
 const app= express();
 const bodyParser = require('body-parser')
