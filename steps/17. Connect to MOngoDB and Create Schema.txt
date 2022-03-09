@@ -1,3 +1,7 @@
+1.
+
+
+
 const express =require('express');
 const app= express();
 const bodyParser = require('body-parser')
@@ -36,3 +40,36 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.Employee.js
+
+
+Desktop\react native expo\employeeapp\server\Employee.js
+
+
+const mongoose = require('mongoose');
+
+const EmployeeSchema = new mongoose.Schema({
+    name:String,
+    email:String,
+    phone:String,
+    picture:String,
+    salary:String,
+    position:String
+})
+mongoose.model("employee", EmployeeSchema)
+
+
+
