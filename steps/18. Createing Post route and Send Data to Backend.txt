@@ -1,7 +1,7 @@
 1.
 
 Postman
-a. post:  http://localhost:5000/send/
+a. post:  http://localhost:5000/delete/
 b. header:  key                value
             Content-Type       application/json
 c.Body
