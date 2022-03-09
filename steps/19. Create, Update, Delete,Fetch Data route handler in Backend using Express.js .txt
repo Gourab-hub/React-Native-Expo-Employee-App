@@ -1,3 +1,8 @@
+1.
+
+Desktop\react native expo\employeeapp\server\app.js
+
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
@@ -98,3 +103,71 @@ app.post('/update', (req, res) => {
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
+
+
+
+
+
+2. IN POSTMAN
+
+
+i.get    http://localhost:5000/
+
+
+ii.
+
+a. post:  http://localhost:5000/send/
+b. header:  key                value
+            Content-Type       application/json
+c.Body
+
+   raw            json
+
+{
+    "name":"Gourab",
+    "email":"gourabbanik2021@gmail.com",
+    "phone":"8167709533",
+    "picture":"some url",
+    "salary":"500000",
+    "position":"web Dev" 
+}
+
+
+iii.
+
+a. post:  http://localhost:5000/send/
+b. header:  key                value
+            Content-Type       application/json
+c.Body
+
+   raw            json
+{
+    "id":"6228d6410fcfae59b91c9b72"
+}
+
+iv.
+
+
+
+a. post:  http://localhost:5000/update/
+b. header:  key                value
+            Content-Type       application/json
+c.Body
+
+   raw            json
+{
+    "id":"6228dad19c0ec40697cd8f49",
+    "name":"Tania",
+    "email":"tania1@gmail.com",
+    "phone":"8167709533",
+    "picture":"some url",
+    "salary":"500000",
+    "position":"web Dev" 
+}
+
+
+
+
+
+
+
