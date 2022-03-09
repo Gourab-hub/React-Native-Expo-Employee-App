@@ -1,0 +1,39 @@
+1 Create Folder in 
+
+Desktop\react native expo\employeeapp\server
+
+2. made file app.js
+
+3.npm init
+
+4.install express , body-parser , mongoose 
+
+\react native expo\employeeapp\server> npm install express body-parser mongoose
+
+
+5.\react native expo\employeeapp\server>nodemon app
+
+6.app.js
+
+
+
+const express =require('express');
+const app= express();
+const bodyParser = require('body-parser')
+const mongoose =require('mongoose')
+const port = 5000
+
+
+//
+//FjIz5W6sB32Jcf03
+
+const mongoUri ="mongodb+srv://EmployeeApp:FjIz5W6sB32Jcf03@cluster0.japc9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
