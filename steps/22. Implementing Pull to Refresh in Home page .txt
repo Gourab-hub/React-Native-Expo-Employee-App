@@ -1,3 +1,9 @@
+1.
+Desktop\react native expo\employeeapp\screens\Home.js
+
+Home.js
+
+
 import react, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, FlatList,Alert } from 'react-native';
@@ -15,6 +21,8 @@ const Home = ({ navigation }) => {
     const [DATA, setData] = useState([])
     const [loading, setLoading] = useState(true)
 
+
+***************
     const fetchData=()=>{
         fetch("http://192.168.1.106:5000/")
         .then(res => res.json())
@@ -29,6 +37,7 @@ const Home = ({ navigation }) => {
         fetchData()
     }, [])
 
+***********
 
     // const renderList = data.map((item) => {
     //     return (
@@ -79,8 +88,8 @@ const Home = ({ navigation }) => {
 
                     }}
                 keyExtractor={item => item._id}
-                onRefresh={()=>fetchData()}
-                refreshing={loading}
+                onRefresh={()=>fetchData()}*****
+                refreshing={loading}******
 
                 />
            
