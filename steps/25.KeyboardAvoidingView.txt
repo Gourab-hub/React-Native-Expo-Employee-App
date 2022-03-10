@@ -1,3 +1,8 @@
+1.
+
+
+
+
 import react, { useState } from 'react';
 import { StyleSheet, Text, View, Image, FlatList, Modal, Alert, KeyboardAvoidingView } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
@@ -41,7 +46,7 @@ const CreateEmployee = ({ navigation, route }) => {
     const [picture, setPicture] = useState(getDetails("picture"))
     const [position, setPosition] = useState(getDetails("position"))
     const [model, setModel] = useState(false)
-    const [keyboardshow,setKeyboardShow]=useState(false)
+    const [keyboardshow,setKeyboardShow]=useState(false)***********************
     // const [image, setImage] = useState(null);
 
 
@@ -179,7 +184,7 @@ const CreateEmployee = ({ navigation, route }) => {
 
 
     return (
-        <KeyboardAvoidingView behavior='position'  style={style.fullscreen} enabled={keyboardshow}>
+        <KeyboardAvoidingView behavior='position'  style={style.fullscreen} enabled={keyboardshow}>**********
         <View>
            
                 <TextInput
@@ -225,7 +230,7 @@ const CreateEmployee = ({ navigation, route }) => {
                     onChangeText={e => setSalary(e)}
                     selectionColor='#a89fd4'
                     outlineColor="#1a298a"
-                    onFocus={()=>setKeyboardShow(true)}
+                    onFocus={()=>setKeyboardShow(true)}***************************
                     activeOutlineColor='#150c3d'
                 />
                 <TextInput
