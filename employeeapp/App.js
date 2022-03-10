@@ -35,7 +35,7 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} options={{...myoptions,title:"Home"}}/>  
         {/* React spread operator to change Title name */}
-        <Stack.Screen name="Create" component={CreateEmployy}options={myoptions}/>
+        <Stack.Screen name="Create" component={CreateEmployy} options={myoptions}/>
         <Stack.Screen name="Profile" component={Profile} options={{...myoptions,title:"Profile"}}/>
       </Stack.Navigator>
 

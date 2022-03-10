@@ -37,7 +37,7 @@ const CreateEmployy = ({ navigation }) => {
         })
             .then(res => res.json())
             .then(data => {
-                Alert.alert(`${data.Name} is saved successfuly`)
+                Alert.alert(`${data.name} is saved successfuly`)
                 console.log("save data", data)
                 navigation.navigate("Home")
             })

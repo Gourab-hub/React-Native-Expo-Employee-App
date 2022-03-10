@@ -1,3 +1,11 @@
+1.
+
+Desktop\react native expo\employeeapp\screens\Profile.js
+
+
+Profile.js
+
+
 import react from 'react';
 import { StyleSheet, Text, View, Image, FlatList, Linking, Platform, TouchableOpacity,Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
