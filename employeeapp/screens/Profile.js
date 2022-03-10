@@ -8,10 +8,10 @@ import { TextInput, Button } from 'react-native-paper';
 
 
 const Profile = (props) => {
-  
+
     // console.log(props)
 
-   const {id,name,email,phone,pic,salary,position} =props.route.params.item
+    const { _id, name, email, phone, picture, salary, position } = props.route.params.item
     const openDial = () => {
         if (Platform.OS === "android") {
             Linking.openURL("tel:8167709533")
@@ -23,7 +23,7 @@ const Profile = (props) => {
 
 
     return (
-        <View style={style.fullscreen}>
+        <View style={style.fullscreen} key={_id}>
             <LinearGradient
                 // Background Linear Gradient
                 colors={['#4c669f', '#3b5998', '#192f6a']}
@@ -34,7 +34,7 @@ const Profile = (props) => {
             <View style={style.ProfileVew}>
                 <Image
                     style={style.Profileimage}
-                    source={{ uri: pic}}
+                    source={{ uri: picture }}
                 />
             </View>
 

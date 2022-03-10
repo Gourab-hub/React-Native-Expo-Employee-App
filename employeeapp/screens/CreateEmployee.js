@@ -1,5 +1,5 @@
 import react, { useState } from 'react';
-import { StyleSheet, Text, View, Image, FlatList, Modal ,Alert} from 'react-native';
+import { StyleSheet, Text, View, Image, FlatList, Modal, Alert,KeyboardAvoidingView } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 
 //Image Picker
@@ -8,7 +8,7 @@ import * as ImagePicker from 'expo-image-picker';
 
 
 
-const CreateEmployy = () => {
+const CreateEmployy = ({ navigation }) => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
@@ -20,13 +20,13 @@ const CreateEmployy = () => {
 
 
 
-    const submitData = ()=>{
-        fetch("http://192.168.1.106:5000/send/",{
-            method:"post",
-            headers:{
-              'Content-Type': 'application/json'
+    const submitData = () => {
+        fetch("http://192.168.1.106:5000/send/", {
+            method: "post",
+            headers: {
+                'Content-Type': 'application/json'
             },
-            body:JSON.stringify({
+            body: JSON.stringify({
                 name,
                 email,
                 phone,
@@ -35,17 +35,17 @@ const CreateEmployy = () => {
                 position
             })
         })
-        .then(res=>res.json())
-        .then(data=>{
-            Alert.alert(`${data.Name} is saved successfuly`)
-            console.log("save data",data)
-            // navigation.navigate("Home")
-        })
-        .catch(err=>{
-          Alert.alert("someting went wrong")
-        console.log(err)
-      })
-  }
+            .then(res => res.json())
+            .then(data => {
+                Alert.alert(`${data.Name} is saved successfuly`)
+                console.log("save data", data)
+                navigation.navigate("Home")
+            })
+            .catch(err => {
+                Alert.alert("someting went wrong")
+                console.log(err)
+            })
+    }
 
 
 
@@ -127,6 +127,7 @@ const CreateEmployy = () => {
 
     return (
         <View style={style.fullscreen}>
+            <KeyboardAvoidingView behavior='position'>
             <TextInput
                 style={style.textinput}
                 label="Name"
@@ -172,7 +173,7 @@ const CreateEmployy = () => {
                 outlineColor="#1a298a"
                 activeOutlineColor='#150c3d'
             />
-             <TextInput
+            <TextInput
                 style={style.textinput}
                 label="Position"
                 value={position}
@@ -187,7 +188,7 @@ const CreateEmployy = () => {
             <Button style={style.button} icon="upload" mode="contained" onPress={() => setModel(true)}>
                 Upload Pic
             </Button>
-            <Button style={style.button} icon="content-save" mode="contained"  onPress={() => submitData()}>
+            <Button style={style.button} icon="content-save" mode="contained" onPress={() => submitData()}>
                 Save
             </Button>
 
@@ -216,7 +217,7 @@ const CreateEmployy = () => {
                 </View>
             </Modal>
 
-
+            </KeyboardAvoidingView>
         </View>
     )
 }
