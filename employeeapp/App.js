@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Constants from "expo-constants"
 import Home from './screens/Home';
-import CreateEmployy from './screens/CreateEmployee';
+import CreateEmployee from './screens/CreateEmployee';
 import Profile from './screens/Profile';
 
 // Navigate 
@@ -35,7 +35,7 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} options={{...myoptions,title:"Home"}}/>  
         {/* React spread operator to change Title name */}
-        <Stack.Screen name="Create" component={CreateEmployy} options={myoptions}/>
+        <Stack.Screen name="CreateEmployee" component={CreateEmployee} options={myoptions}/>
         <Stack.Screen name="Profile" component={Profile} options={{...myoptions,title:"Profile"}}/>
       </Stack.Navigator>
 

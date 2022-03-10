@@ -8,11 +8,15 @@ import { TextInput, Button } from 'react-native-paper';
 
 
 const Profile = (props) => {
+
+
+    //   console.log("Profilr props",props)
     const { _id, name, email, phone, picture, salary, position } = props.route.params.item
-    // console.log(props)
+  
+    // console.log(_id)
 
     const deleteEmployee=()=>{
-        fetch("http://192.168.1.106:5000/delete/",{
+        fetch("http://192.168.1.106:5000/delete",{
             method:"post",
             headers:{
                "Content-Type":"application/json"
@@ -25,8 +29,12 @@ const Profile = (props) => {
         .then(deleteEmp=>{
             Alert.alert(`${deleteEmp.name} Deleted`)
             props.navigation.navigate('Home');
-            console.log(deleteEmp)
-        }).catch(err=>Alert.alert('Error:', err.message))
+            console.log("deleteEmp",deleteEmp)
+        }).catch(err=>{
+            Alert.alert('Error:', err.message)
+            console.log(err)
+        }
+        )
     }
 
 
@@ -93,7 +101,11 @@ const Profile = (props) => {
 
 
             <View style={style.modelButtonView}>
-                <Button style={style.button} icon="account-edit" mode="contained" onPress={() => console.log("pressed")}>
+                <Button style={style.button} icon="account-edit" mode="contained" onPress={() => {
+                      props.navigation.navigate('CreateEmployee',
+                    { _id, name, email, phone, picture, salary, position }
+                    )
+                    }}>
                     Account-edit
                 </Button>
 

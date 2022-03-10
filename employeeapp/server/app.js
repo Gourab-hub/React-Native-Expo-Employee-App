@@ -69,7 +69,7 @@ app.post('/delete', (req, res) => {
     Employee.findByIdAndRemove(req.body.id)
         .then(data => {
             console.log(data)
-            res.send('Deleted.....')
+            res.send(data)
         }).catch(err => {
             console.log(err)
         })

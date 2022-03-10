@@ -21,7 +21,7 @@ const Home = ({ navigation }) => {
         .then(result => {
             setData(result)
             setLoading(false)
-            console.log(result)
+            // console.log(result)
         }).catch(err=>Alert.alert(err))
     }
 
@@ -50,6 +50,7 @@ const Home = ({ navigation }) => {
     // })
 
     const renderList = ((item) => {
+        // console.log("Home item",item)
         return (
             <Card style={style.mycard} key={item._id} onPress={() => navigation.navigate("Profile", { item: item })}>
                 <View style={style.cardview}>
@@ -95,7 +96,7 @@ const Home = ({ navigation }) => {
 
             /> */}
             {/* {renderList} */}
-            <FAB onPress={() => navigation.navigate("Create")}
+            <FAB onPress={() => navigation.navigate("CreateEmployee")}
                 style={style.fab}
                 small={false}
                 icon="plus"
