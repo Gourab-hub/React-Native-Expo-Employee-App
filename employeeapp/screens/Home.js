@@ -16,12 +16,12 @@ const Home = ({ navigation }) => {
     const [loading, setLoading] = useState(true)
 
     const fetchData=()=>{
-        fetch("http://192.168.1.106:5000/")
+        fetch("https://employee-jsonn.vercel.app/")
         .then(res => res.json())
         .then(result => {
             setData(result)
             setLoading(false)
-            // console.log(result)
+            console.log(result)
         }).catch(err=>Alert.alert(err))
     }
 

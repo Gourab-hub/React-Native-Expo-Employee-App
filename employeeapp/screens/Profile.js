@@ -16,7 +16,7 @@ const Profile = (props) => {
     // console.log(_id)
 
     const deleteEmployee=()=>{
-        fetch("http://192.168.1.106:5000/delete",{
+        fetch("https://employee-jsonn.vercel.app/delete",{
             method:"post",
             headers:{
                "Content-Type":"application/json"

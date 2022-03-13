@@ -47,7 +47,7 @@ const CreateEmployee = ({ navigation, route }) => {
 
 
     const submitData = () => {
-        fetch("http://192.168.1.106:5000/send/", {
+        fetch("https://employee-jsonn.vercel.app/send/", {
             method: "post",
             headers: {
                 'Content-Type': 'application/json'
@@ -74,7 +74,7 @@ const CreateEmployee = ({ navigation, route }) => {
     }
 
     const updateData=()=>{
-        fetch("http://192.168.1.106:5000/update/", {
+        fetch("https://employee-jsonn.vercel.app/update/", {
             method: "post",
             headers: {
                 'Content-Type': 'application/json'
